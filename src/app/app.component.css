@@ -1,3 +1,21 @@
 p {
   font-family: Lato;
 }
+.calculadora{
+  margin-left : 0px;
+  width : 305px;
+}
+
+body{
+  margin:0px;
+  padding: 0px;
+  background-color: rgb(116,125,140,0.7);
+}
+
+bttn{
+  margin-bottom: 8px;
+  margin-left: 5px;
+  width : 59px;
+  height : 45px;
+  font-size: 22px; 
+}
