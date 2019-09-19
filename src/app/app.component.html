@@ -1,31 +1,41 @@
 <body>
-<div class="container mt-3">
+
 
   <!--<div class="row justify-content-center">
      <input type="text" class="form-control" name="display" [(ngModel)]="display" disabled readonly>
      
   </div>-->
+  <!--
+    <tagname propriedade="valor> conteudo </tagname>"
+  -->
 
+<div class="container mt-3">
   <div class="row justify-content-center">
     <div class="col-12 col-sm-10 col-md-8 col-lg-6" >
-      <form class="bg-light calculadora  p-1">
+      <form class="bg-light calculadora p-1">
         <!--mb-3 -> margin botton -->
+
         <input class="form-control mb-3" name="display" [(ngModel)]="display" placeholder="0" disabled readonly>
-        <input type="button" *ngFor="let tecla of teclas" class="form-control btn btn-secondary btn-danger bttn">
-        <button type="button" (click)="addDigito(l)" [value]="l" class="btn btn-primary">{{l}}</button>  
+        <input type="button" *ngFor="let tecla of teclas" class="col-3 form-control btn btn-secondary btn-danger btnn " value="{{tecla}}" [ngClass]="{'btn-secondary':isNumber(tecla),'btn-danger':!isNumber(tecla)}" 
+        (click)="addDigito(tecla)"
+        >
+        <!-- [class.bg-secondary] = "!isNumber(tecla)" --> 
+       <!-- <button type="button" (click)="addDigito(l)" [value]="l" class="btn btn-primary">{{l}}</button>  -->
+       <div class="row">
+        <div class="col -3">
+          <button type="button" (click)="calcular()" class="btn btn-success">Calcular</button>&nbsp;
+          <button type="button" class="btn btn-danger" (click)="ce()">CE</button>     
+        </div>  
+      </div>
+      <div class="calculadora">
+    <app-log></app-log>
+    </div>
       </form>
            
     </div>
   </div>
-  <div class="row">
-    <div class="col -3">
-      <button type="button" (click)="calcular()" class="btn btn-success">Calcular</button>
-      <button type="button" class="btn btn-danger" (click)="ce()">CE</button>     
-    </div>  
-  </div>
-  <div class="row">
-    <app-log></app-log>
-  </div>
+  
+  
 </div>
 </body>
 
